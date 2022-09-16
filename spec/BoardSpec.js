@@ -44,6 +44,7 @@ describe('Board', function() {
     var board = new Board(matrix);
 
     it('should find a row conflict', function() {
+      expect(board.hasRowConflictAt(1)).to.be.equal(true);
       expect(board.hasAnyRowConflicts()).to.be.equal(true);
     });
 
@@ -78,10 +79,12 @@ describe('Board', function() {
     var board = new Board(matrix);
 
     it('should not find a row conflict', function() {
+
       expect(board.hasAnyRowConflicts()).to.be.equal(false);
     });
 
     it('should find a col conflict', function() {
+      expect(board.hasColConflictAt(0)).to.be.equal(true);
       expect(board.hasAnyColConflicts()).to.be.equal(true);
     });
 
@@ -124,6 +127,7 @@ describe('Board', function() {
     });
 
     it('should find a majorDiagonal conflict', function() {
+      //expect(board.hasMajorDiagonalConflictAt(-1)).to.be.equal(true);
       expect(board.hasAnyMajorDiagonalConflicts()).to.be.equal(true);
     });
 
